@@ -1,0 +1,25 @@
+{
+  "name": "app-tareas-por-hacer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paynekk/Aplicacion_consola_interactiva.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paynekk/Aplicacion_consola_interactiva/issues"
+  },
+  "homepage": "https://github.com/Paynekk/Aplicacion_consola_interactiva#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^8.2.0",
+    "uuid": "^8.3.2"
+  }
+}
