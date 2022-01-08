@@ -5,4 +5,4 @@
 ------------------------------------------------------------------------------------------------------------------------
 ![listar tareas 3](https://user-images.githubusercontent.com/40813580/148625983-3bdd9c61-536b-4f6c-a7d5-ca03e2d7c3ef.png)
 ------------------------------------------------------------------------------------------------------------------------
-![seleccionar tareas](https://user-images.githubusercontent.com/40813580/148626153-d6f91979-1f06-44be-a743-838709e00518.png)
+![selecciona opcion](https://user-images.githubusercontent.com/40813580/148626210-c4040bfc-28be-4d66-aea6-c5c376b0727b.png)
