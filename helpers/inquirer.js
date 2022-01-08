@@ -39,6 +39,7 @@ const preguntas = [
     }
 ];
 
+//pausa la consola #inquirer
 const pausa = async () => {
     const question = [
         {
@@ -47,10 +48,24 @@ const pausa = async () => {
             message: `Presione ${'ENTER'.green} para continuar`,
         }
     ]
-   const re = await inquirer.prompt(question);
-   return re;  
+    const {opcion} = await inquirer.prompt(question);
+    return opcion;
 }
 
+//confirmacion por consola #inquirer
+const confirmar = async (message) => {
+    const question = [
+        {
+            type: 'confirm',
+            name: 'opcion',
+            message,
+        }
+    ]
+    const { opcion } = await inquirer.prompt(question);
+    return opcion
+}
+
+//Muestra el menu de preguntas #inquirer
 const inquirerMenu = async () => {
     console.log('\n= ====================== ='.green);
     console.log('  Seleccione una opcion'.white);
@@ -61,6 +76,66 @@ const inquirerMenu = async () => {
     return opcion;
 }
 
+//funcion para elegir una tarea #inquirer
+const elegirTarea = async (tareas = []) => {
+    let index = 0;
+    choices = tareas.map(tarea => {
+        index++;
+        return {
+            value: tarea.id,
+            name: `${index}`.green + ` ${tarea.desc}`,
+        }
+    });
+
+    choices.unshift({
+        value: 0,
+        name: 'Cancelar'
+    });
+
+    const listaTareas = [
+        {
+            type: 'list',
+            name: 'id',
+            message: 'Selecciona una tarea',
+            choices
+        }
+    ]
+    const { id } = await inquirer.prompt(listaTareas);
+
+    return id;
+}
+
+// tareas en modo checklist por consola #inquirer
+const tareasCheck = async (tareas = []) => {
+    let index = 0;
+    choices = tareas.map(tarea => {
+        index++;
+        return {
+            value: tarea.id,
+            name: `${index}`.green + ` ${tarea.desc}`,
+            checked: tarea.completadoEn ? true : false,
+        }
+    });
+
+    choices.unshift({
+        value: 0,
+        name: 'Cancelar'
+    });
+
+    const listaTareas = [
+        {
+            type: 'checkbox',
+            name: 'ids',
+            message: 'Seleccionar',
+            choices
+        }
+    ]
+    const { ids } = await inquirer.prompt(listaTareas);
+
+    return ids;
+}
+
+// lee el imput por consola #inquirer
 const leerImput = async (message) => {
     const question = [
         {
@@ -75,14 +150,16 @@ const leerImput = async (message) => {
             }
         }
     ]
-    const {desc} = await inquirer.prompt(question);
+    const { desc } = await inquirer.prompt(question);
     return desc;
-
 }
 
 
 module.exports = {
     inquirerMenu,
     pausa,
-    leerImput
+    leerImput,
+    elegirTarea,
+    confirmar,
+    tareasCheck
 }
