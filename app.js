@@ -50,7 +50,7 @@ const main = async () => {
                 if (id != 0) {
                     ok = await confirmar();
                     if (ok) {
-                        tarea(id);
+                        tareas.borrarTarea(id);
                     }
                 }
 
