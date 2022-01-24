@@ -135,8 +135,8 @@ const tareasCheck = async (tareas = []) => {
     return ids;
 }
 
-// lee el imput por consola #inquirer
-const leerImput = async (message) => {
+// lee el Input por consola #inquirer
+const leerInput = async (message) => {
     const question = [
         {
             type: 'input',
@@ -158,7 +158,7 @@ const leerImput = async (message) => {
 module.exports = {
     inquirerMenu,
     pausa,
-    leerImput,
+    leerInput,
     elegirTarea,
     confirmar,
     tareasCheck

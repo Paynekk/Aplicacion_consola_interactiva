@@ -3,7 +3,7 @@ require('colors');
 const inquirer = require('inquirer');
 const { guardarDB, leerDB } = require('./helpers/guardarArchivo');
 const { mostrarListado } = require('./helpers/imprimeListado');
-const { inquirerMenu, pausa, leerImput, elegirTarea, confirmar, tareasCheck } = require('./helpers/inquirer')
+const { inquirerMenu, pausa, leerInput, elegirTarea, confirmar, tareasCheck } = require('./helpers/inquirer')
 
 const Tareas = require('./models/tareas')
 
@@ -20,7 +20,7 @@ const main = async () => {
         opt = await inquirerMenu();
         switch (opt) {
             case '1':
-                const desc = await leerImput('Descripcion:');
+                const desc = await leerInput('Descripcion:');
                 tareas.crearTarea(desc);
                 console.log(desc);
 
